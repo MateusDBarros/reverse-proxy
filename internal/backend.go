@@ -2,11 +2,12 @@ package main
 
 import (
 	"net/http/httputil"
+	"net/url"
 	"sync"
 )
 
 type Backend struct {
-	url               string
+	url               *url.URL
 	alive             bool
 	activeConnections int
 	mu                sync.RWMutex
